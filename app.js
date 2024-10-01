@@ -248,3 +248,162 @@
 // }
 
 // console.log(sumOddEven(10));
+
+// func-19
+// function invertTime(H, M, S) {
+//     let totalSeconds = H * 3600 + M * 60 + S;
+//     return totalSeconds;
+// }
+// console.log(invertTime(1,0,0));
+
+// Func-20
+// function decTime(H, M, S) {
+//     S--;
+//     if (S < 0) {
+//         S = 59;
+//         M--;
+
+//         if (M < 0) {
+//             M = 59;
+//             H--;
+
+//             if (H < 0) {
+//                 H = 0;
+//             }
+//         }
+//     }
+
+//     return `${String(H).padStart(2, '0')}:${String(M).padStart(2, '0')}:${String(S).padStart(2, '0')}`;
+// }
+
+// console.log(decTime(0, 6, 40)); // 00:06:39
+
+// Func-21
+// function isLeapYear(Y) {
+//     if (Y % 4 === 0) {
+//         if (Y % 100 === 0) {
+//             if (Y % 400 === 0) {
+//                 return true;
+//             }
+//             return false; 
+//         }
+//         return true; 
+//     }
+//     return false;
+
+// }
+// console.log(isLeapYear(2024));
+
+// Func-22
+// function isLeapYear(Y) {
+//     if (Y % 4 === 0) {
+//         if (Y % 100 === 0) {
+//             if (Y % 400 === 0) {
+//                 return true;
+//             }
+//             return false;
+//         }
+//         return true;
+//     }
+//     return false;
+// }
+
+// function monthDays(M, Y) {
+//     const daysInMonth = [0, 31, isLeapYear(Y) ? 29 : 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+
+//     return daysInMonth[M];
+// }
+
+// console.log(monthDays(2, 2024));
+
+
+// Func-23
+// function isLeapYear(Y) {
+//     if (Y % 4 === 0) {
+//         if (Y % 100 === 0) {
+//             if (Y % 400 === 0) {
+//                 return true; // 400 ga bo'linadigan yil kabisa yili
+//             }
+//             return false; // 100 ga bo'linadigan, lekin 400 ga bo'linmaydigan yil
+//         }
+//         return true; // 4 ga bo'linadigan, lekin 100 ga bo'linmaydigan yil
+//     }
+//     return false; // 4 ga bo'linmaydigan yil
+// }
+
+// function monthDays(M, Y) {
+//     const daysInMonth = [0, 31, isLeapYear(Y) ? 29 : 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+//     return daysInMonth[M];
+// }
+
+// function prevDate(D, M, Y) {
+//     D--; 
+
+//     if (D === 0) {
+//         M--; 
+//         if (M === 0) { 
+//             M = 12;
+//             Y--;
+//         }
+//         D = monthDays(M, Y);
+//     }
+
+//     return `${String(D).padStart(2, '0')}.${String(M).padStart(2, '0')}.${Y}`;
+// }
+
+// console.log(prevDate(10, 1, 2024)); 
+
+
+// Func-24
+// function isLeapYear(Y) {
+//     if (Y % 4 === 0) {
+//         if (Y % 100 === 0) {
+//             if (Y % 400 === 0) {
+//                 return true; // 400 ga bo'linadigan yil kabisa yili
+//             }
+//             return false; // 100 ga bo'linadigan, lekin 400 ga bo'linmaydigan yil
+//         }
+//         return true; // 4 ga bo'linadigan, lekin 100 ga bo'linmaydigan yil
+//     }
+//     return false; // 4 ga bo'linmaydigan yil
+// }
+
+// function monthDays(M, Y) {
+//     const daysInMonth = [0, 31, isLeapYear(Y) ? 29 : 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+//     return daysInMonth[M];
+// }
+
+// function nextDate(D, M, Y) {
+//     D++; 
+
+//     if (D > monthDays(M, Y)) {
+//         D = 1;
+//         M++; 
+//         if (M === 13) { 
+//             M = 1;
+//             Y++;
+//         }
+//     }
+
+//     return `${String(D).padStart(2, '0')}.${String(M).padStart(2, '0')}.${Y}`;
+// }
+
+// console.log(nextDate(10, 3, 2022)); // 11.
+
+
+// func-25
+// function getDividersNumberAndSum(N) {
+//     let count = 0;
+//     let sum = 0;
+
+//     for (let i = 1; i <= N; i++) {
+//         if (N % i === 0) {
+//             count++;
+//             sum += i;
+//         }
+//     }
+
+//     return `${count}, ${sum}`;
+// }
+
+// console.log(getDividersNumberAndSum(12)); // 6, 24
